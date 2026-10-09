@@ -13,8 +13,11 @@ The directory structure of the project looks like this:
 │       └── tests.yaml
 ├── configs/                  # Configuration files
 ├── data/                     # Data directory
-│   ├── processed
-│   └── raw
+│   ├── raw
+|   ├── processed
+│   └── external
+│       ├── raw
+|       └── processed
 ├── dockerfiles/              # Dockerfiles
 │   ├── api.Dockerfile
 │   └── train.Dockerfile

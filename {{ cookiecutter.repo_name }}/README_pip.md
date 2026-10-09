@@ -12,8 +12,11 @@ The directory structure of the project looks like this:
 │       └── tests.yaml
 ├── configs/                  # Configuration files
 ├── data/                     # Data directory
-│   ├── processed
-│   └── raw
+│   ├── raw
+|   ├── processed
+│   └── external
+│       ├── raw
+|       └── processed
 ├── dockerfiles/              # Dockerfiles
 │   ├── api.Dockerfile
 │   └── train.Dockerfile
@@ -50,6 +53,5 @@ The directory structure of the project looks like this:
 ```
 
 
-Created using [mlops_template](https://github.com/SkafteNicki/mlops_template),
-a [cookiecutter template](https://github.com/cookiecutter/cookiecutter) for getting
-started with Machine Learning Operations (MLOps).
+Created using [DL_template](https://github.com/MiliTheGoat/DL_template.git), inspired by [mlops_template](https://github.com/SkafteNicki/mlops_template), and [cookiecutter template](https://github.com/cookiecutter/cookiecutter) for getting
+started with Deep Learning.
