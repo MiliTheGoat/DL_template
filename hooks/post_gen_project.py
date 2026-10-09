@@ -59,16 +59,6 @@ if project_structure == "simple":
         if Path(f).exists():
             shutil.rmtree(f)
 
-# Remove data folders if specified
-if remove_data_folders == "true":
-    logger.info("Removing data folders.")
-    folder_and_files_to_remove = [
-        "data/", "data/raw", "data/external/raw", "data/external/processed", "data/processed", "data/external",
-    ]
-    for f in folder_and_files_to_remove:
-        if Path(f).exists():
-            shutil.rmtree(f)
-
 # Rename files and folders for the uv template
 if deps_manager == "uv":
     logger.info("Renaming files and folders for the uv template.")
@@ -115,6 +105,17 @@ if deps_manager == "pip":
         Path(".github/workflows/linting_pip.yaml").rename(".github/workflows/linting.yaml")
         Path(".github/dependabot_uv.yaml").unlink()
         Path(".github/dependabot_pip.yaml").rename(".github/dependabot.yaml")
+
+# Remove data folders if specified
+if remove_data_folders == "true":
+    logger.info("Removing all data related folders")
+    folder_and_files_to_remove = [
+        "data/", "data/raw", "data/external/raw", "data/external/processed", "data/processed", "data/external",
+    ]
+    for f in folder_and_files_to_remove:
+        if Path(f).exists():
+            shutil.rmtree(f)
+
 
 if use_coding_agent_support == "true":
     logger.info("Adding coding agent support files.")
