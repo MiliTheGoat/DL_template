@@ -106,7 +106,7 @@ if deps_manager == "pip":
         Path(".github/dependabot_uv.yaml").unlink()
         Path(".github/dependabot_pip.yaml").rename(".github/dependabot.yaml")
 
-if use_coding_agent_support:
+if use_coding_agent_support == "true":
     logger.info("Adding coding agent support files.")
     if deps_manager == "pip":
         Path("AGENTS_uv.md").unlink()
@@ -115,7 +115,7 @@ if use_coding_agent_support:
         Path("AGENTS_pip.md").unlink()
         Path("AGENTS_uv.md").rename("AGENTS.md")
 
-if remove_docker_support:
+if remove_docker_support == "true":
     logger.info("Removing all docker related files and folders.")
     folder_and_files_to_remove = [
             ".devcontainer", "dockerfiles", "docs",

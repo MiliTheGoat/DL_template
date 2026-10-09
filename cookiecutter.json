@@ -4,7 +4,7 @@
   "project_structure": ["advance", "simple"],
   "deps_manager": ["uv", "pip"],
   "add_coding_agent_support": [true, false],
-  "docker_support": [true, false],
+  "remove_docker_support": [true, false],
   "author_name": "Your name (or your organization/company/team)",
   "description": "A short description of the project.",
   "python_version": "3.11",
