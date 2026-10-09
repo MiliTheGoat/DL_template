@@ -18,7 +18,7 @@ python_version = "{{cookiecutter.python_version}}"
 project_structure = "{{cookiecutter.project_structure}}"
 deps_manager = "{{cookiecutter.deps_manager}}"
 use_coding_agent_support = "{{cookiecutter.add_coding_agent_support}}"
-remove_docker_support = "{{cookiecutter.docker_support}}"
+remove_docker_support = "{{cookiecutter.remove_docker_support}}"
 
 logger.info(f"Project name: {project_name}")
 logger.info(f"Python version: {python_version}")
