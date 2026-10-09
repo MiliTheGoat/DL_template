@@ -115,6 +115,13 @@ if remove_data_folders == "true":
     for f in folder_and_files_to_remove:
         if Path(f).exists():
             shutil.rmtree(f)
+elif remove_data_folders == "false":
+    logger.info("Keeping all data related folders")
+    folders_to_create = [
+        "data/", "data/raw", "data/external/raw", "data/external/processed", "data/processed", "data/external",
+        ]
+    for f in folders_to_create:
+        Path(f).mkdir(parents=True, exist_ok=True)
 
 
 if use_coding_agent_support == "true":
