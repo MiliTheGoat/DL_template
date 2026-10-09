@@ -18,7 +18,7 @@ python_version = "{{cookiecutter.python_version}}"
 project_structure = "{{cookiecutter.project_structure}}"
 deps_manager = "{{cookiecutter.deps_manager}}"
 use_coding_agent_support = "{{cookiecutter.add_coding_agent_support}}"
-use_docker_support = "{{cookiecutter.docker_support}}"
+remove_docker_support = "{{cookiecutter.docker_support}}"
 
 logger.info(f"Project name: {project_name}")
 logger.info(f"Python version: {python_version}")
@@ -115,7 +115,7 @@ if use_coding_agent_support:
         Path("AGENTS_pip.md").unlink()
         Path("AGENTS_uv.md").rename("AGENTS.md")
 
-if not use_docker_support:
+if remove_docker_support:
     logger.info("Removing all docker related files and folders.")
     folder_and_files_to_remove = [
             ".devcontainer", "dockerfiles", "docs",
