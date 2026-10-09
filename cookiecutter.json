@@ -3,7 +3,7 @@
   "project_name": "project_name",
   "project_structure": ["advance", "simple"],
   "deps_manager": ["uv", "pip"],
-  "remove_data_folders": ["false", "true"],
+  "remove_data_folders": ["true", "false"],
   "add_coding_agent_support": [true, false],
   "author_name": "Your name (or your organization/company/team)",
   "description": "A short description of the project.",
