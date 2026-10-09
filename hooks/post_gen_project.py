@@ -18,7 +18,7 @@ python_version = "{{cookiecutter.python_version}}"
 project_structure = "{{cookiecutter.project_structure}}"
 deps_manager = "{{cookiecutter.deps_manager}}"
 use_coding_agent_support = "{{cookiecutter.add_coding_agent_support}}"
-remove_docker_support = "{{cookiecutter.remove_docker_support}}"
+remove_data_folders = "{{cookiecutter.remove_data_folders}}"
 
 logger.info(f"Project name: {project_name}")
 logger.info(f"Python version: {python_version}")
@@ -54,6 +54,16 @@ if project_structure == "simple":
     logger.info("Removing unnecessary files and folders for the simple template.")
     folder_and_files_to_remove = [
         ".github", ".devcontainer", "dockerfiles", "docs",
+    ]
+    for f in folder_and_files_to_remove:
+        if Path(f).exists():
+            shutil.rmtree(f)
+
+# Remove data folders if specified
+if remove_data_folders == "true":
+    logger.info("Removing data folders.")
+    folder_and_files_to_remove = [
+        "data/", "data/raw", "data/external/raw", "data/external/processed", "data/processed", "data/external",
     ]
     for f in folder_and_files_to_remove:
         if Path(f).exists():
@@ -114,12 +124,3 @@ if use_coding_agent_support == "true":
     else:
         Path("AGENTS_pip.md").unlink()
         Path("AGENTS_uv.md").rename("AGENTS.md")
-
-if remove_docker_support == "true":
-    logger.info("Removing all docker related files and folders.")
-    folder_and_files_to_remove = [
-            ".devcontainer", "dockerfiles", "docs",
-        ]
-    for f in folder_and_files_to_remove:
-        if Path(f).exists():
-            shutil.rmtree(f)
